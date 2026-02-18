@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"noImplicitAny": true,
+		"module": "esnext",
+		"target": "esnext",
+		"jsx": "react-jsx",
+		"allowJs": true,
+		"moduleResolution": "node",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
+}

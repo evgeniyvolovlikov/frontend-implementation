@@ -4,7 +4,7 @@
 	"description": "blog",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack -c webpack-config.js",
+		"start": "webpack -c webpack-config.ts",
 		"prettier:check": "prettier . --check",
 		"prettier:fix": "prettier . --write"
 	},
@@ -13,7 +13,11 @@
 	"license": "ISC",
 	"packageManager": "pnpm@10.16.0",
 	"devDependencies": {
+		"@types/node": "^25.2.3",
 		"prettier": "^3.8.1",
+		"ts-loader": "^9.5.4",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3",
 		"webpack": "^5.105.2",
 		"webpack-cli": "^6.0.1"
 	}
