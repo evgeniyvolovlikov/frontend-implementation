@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { buildResolvers } from './config/build/build-resolvers';
+import { buildDevServer } from './config/build/build-dev-server';
 
 export default (): webpack.Configuration => {
 	const paths = {
@@ -33,5 +34,6 @@ export default (): webpack.Configuration => {
 				template: paths.html,
 			}),
 		],
+		devServer: buildDevServer(),
 	};
 };
