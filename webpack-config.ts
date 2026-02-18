@@ -6,9 +6,10 @@ import { buildDevServer } from './config/build/build-dev-server';
 
 export default (): webpack.Configuration => {
 	const paths = {
-		entry: path.resolve(__dirname, 'index.ts'),
+		entry: path.resolve(__dirname, 'src', 'index.tsx'),
 		build: path.resolve(__dirname, 'build'),
 		html: path.resolve(__dirname, 'public', 'index.html'),
+		src: path.resolve(__dirname, 'src')
 	};
 
 	return {
