@@ -1,12 +1,20 @@
 import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { buildResolvers } from './config/build/build-resolvers';
 
-export default () => {
+export default (): webpack.Configuration => {
+	const paths = {
+		entry: path.resolve(__dirname, 'index.ts'),
+		build: path.resolve(__dirname, 'build'),
+		html: path.resolve(__dirname, 'public', 'index.html'),
+	};
+
 	return {
 		mode: 'development',
-		entry: path.resolve(__dirname, 'index.ts'),
+		entry: paths.entry,
 		output: {
-			path: path.resolve(__dirname, 'build'),
+			path: paths.build,
 			filename: '[name].[contenthash].js',
 			clean: true,
 		},
@@ -20,5 +28,10 @@ export default () => {
 			],
 		},
 		resolve: buildResolvers(),
+		plugins: [
+			new HtmlWebpackPlugin({
+				template: paths.html,
+			}),
+		],
 	};
 };
