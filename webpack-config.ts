@@ -19,7 +19,7 @@ export default (env: BuildEnv): webpack.Configuration => {
 	const isDev = mode === 'development';
 
 	return {
-		mode: 'development',
+		mode,
 		entry: paths.entry,
 		output: {
 			path: paths.build,
@@ -35,12 +35,13 @@ export default (env: BuildEnv): webpack.Configuration => {
 				},
 			],
 		},
-		resolve: buildResolvers(),
 		plugins: [
 			new HtmlWebpackPlugin({
 				template: paths.html,
 			}),
 		],
+		resolve: buildResolvers(),
 		devServer: buildDevServer(),
+		devtool: isDev && 'inline-source-map',
 	};
 };
