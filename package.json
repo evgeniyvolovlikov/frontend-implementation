@@ -4,9 +4,9 @@
 	"description": "blog",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack serve -c webpack-config.ts",
+		"start": "webpack serve --env port=3001 -c webpack-config.ts",
 		"prettier:check": "prettier . --check",
-		"prettier:fix": "prettier . --write"
+		"prettier:fix": "prettier --write \"**/*.{ts,tsx,css,md}\""
 	},
 	"keywords": [],
 	"author": "Evgeniy Volovlikov",
